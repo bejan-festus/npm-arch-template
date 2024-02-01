@@ -10,6 +10,9 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
+      "app-store": [
+        "dist/app-store"
+      ],
       "lib-child-one": [
         "dist/lib-child-one"
       ],

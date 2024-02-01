@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'master-app';
+
+  childData:string = ''
+
+  parentData:string = ''
+
+  onChange(event:any){
+    this.parentData = event
+  }
 }

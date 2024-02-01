@@ -1,1 +1,16 @@
+<button routerLink="/home" >Redirect</button>
 <router-outlet></router-outlet>
+
+<div>
+    <h3>Input</h3>
+    <input class="form-control" [(ngModel)]="childData" type="text">
+</div>
+
+<lib-lib-child-two [ParentData] = "childData" (ChildData)="onChange($event)"></lib-lib-child-two>
+
+
+
+<div>
+    <h3>Child to parent</h3>
+    <input class="form-control" disabled [(ngModel)]="parentData" type="text">
+</div>
