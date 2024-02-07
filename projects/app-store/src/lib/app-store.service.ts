@@ -9,4 +9,5 @@ export class AppStoreService {
   constructor() { }
 
   dataSubject = new BehaviorSubject<any>(null)
+  envSubject = new BehaviorSubject<any>(null)
 }

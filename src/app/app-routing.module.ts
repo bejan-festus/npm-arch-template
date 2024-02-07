@@ -9,7 +9,7 @@ const routes: Routes = [
     children:[
       {
         path:"home",
-        loadChildren: () => import('../../node_modules/lib-child-one-bejan').then(m => m.LibChildOneModule)
+        loadChildren: () => import('../../projects/lib-child-one/src/public-api').then(m => m.LibChildOneModule)
       }
     ]
   }

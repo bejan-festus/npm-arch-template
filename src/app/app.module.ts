@@ -7,6 +7,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LibChildTwoModule } from 'lib-child-two-bejan';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/http-auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,16 @@ import { LibChildTwoModule } from 'lib-child-two-bejan';
     AppRoutingModule,
     FormsModule,
     LibChildTwoModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
